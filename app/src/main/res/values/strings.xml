@@ -1,6 +1,21 @@
 <resources>
-    <string name="app_name">Beerby!</string>
+    <string name="app_name">Beer-by!</string>
 
     <string name="action_home">Home</string>
     <string name="back_b">Back home!</string>
+
+    <string name="action_exit">Exit</string>
+    <string name="exit_b">Exit App!</string>
+
+    <string name="beerImage">beer</string>
+    <string name="beer_info">Find the best beer places here! Search by: </string>
+
+    <string name="city">City</string>
+    <string name="state">State</string>
+    <string name="zipCode">Zip Code</string>
+
+    <string name="editText_main">Enter your text here...</string>
+    <string name="searchBn">Let\'s go!</string>
+
+
 </resources>
