@@ -17,5 +17,7 @@
     <string name="editText_main">Enter your text here...</string>
     <string name="searchBn">Let\'s go!</string>
 
+    <string name="listInfo">*Click the brewery name to find more information about it...</string>
+
 
 </resources>
