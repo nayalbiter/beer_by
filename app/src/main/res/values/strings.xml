@@ -19,5 +19,14 @@
 
     <string name="listInfo">*Click the brewery name to find more information about it...</string>
 
+    <string name="brewery_name">Brewery name:</string>
+    <string name="brewery_loc">Location:</string>
+
+    <string name="search_map">Map</string>
+    <string name="open_map">Open Map</string>
+    <string name="beer_log">beerLog</string>
+
+    <string name="brewery_map">Click map</string>
+
 
 </resources>

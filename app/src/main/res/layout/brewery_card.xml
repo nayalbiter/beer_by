@@ -37,7 +37,71 @@
             android:id="@+id/breweryCard"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:cardBackgroundColor="#FFC107" />
+            app:cardBackgroundColor="#FFC107" >
+
+            <RelativeLayout
+                android:id="@+id/showingCardInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <ImageView
+                    android:id="@+id/beerLog"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/beer_log"
+                    app:srcCompat="@drawable/beer2" />
+
+                <TextView
+                    android:id="@+id/breweryName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@+id/beerLog"
+                    android:onClick="breweryDetailedInfo"
+                    android:padding="15dp"
+                    android:text="@string/brewery_name"
+                    android:textColor="#6D4C41"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/breweryLocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@+id/breweryName"
+                    android:padding="15dp"
+                    android:text="@string/brewery_loc"
+                    android:textColor="#6D4C41"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/breweryMap"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@+id/breweryLocation"
+                    android:padding="15dp"
+                    android:text="@string/brewery_map"
+                    android:textColor="#6D4C41"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+
+                <ImageView
+                    android:id="@+id/map"
+                    android:layout_width="48dp"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@+id/breweryMap"
+                    android:background="#96004E"
+                    android:contentDescription="@string/open_map"
+                    android:minHeight="48dp"
+                    android:onClick="openLocationInMap"
+                    app:srcCompat="@drawable/ic_map" />
+
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
 
     </com.google.android.material.appbar.AppBarLayout>
 
