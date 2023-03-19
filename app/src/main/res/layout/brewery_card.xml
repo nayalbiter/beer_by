@@ -60,7 +60,7 @@
                     android:onClick="breweryDetailedInfo"
                     android:padding="15dp"
                     android:text="@string/brewery_name"
-                    android:textColor="#6D4C41"
+                    android:textColor="#130C0A"
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
@@ -71,7 +71,7 @@
                     android:layout_toEndOf="@+id/breweryName"
                     android:padding="15dp"
                     android:text="@string/brewery_loc"
-                    android:textColor="#6D4C41"
+                    android:textColor="#120C0B"
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
@@ -104,8 +104,6 @@
         </androidx.cardview.widget.CardView>
 
     </com.google.android.material.appbar.AppBarLayout>
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

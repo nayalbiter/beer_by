@@ -28,5 +28,16 @@
 
     <string name="brewery_map">Click map</string>
 
+    <string name="brewery_type">Type:</string>
+    <string name="brewery_address">Address:</string>
+    <string name="brewery_city">City:</string>
+    <string name="brewery_state">State:</string>
+
+    <string name="brewery_zipCode">Zip Code:</string>
+
+    <string name="brewery_country">Country:</string>
+    <string name="brewery_phone">Phone Number:</string>
+    <string name="brewery_website">Website:</string>
+    <string name="come_back_to_the_list">Come back to the list!</string>
 
 </resources>
