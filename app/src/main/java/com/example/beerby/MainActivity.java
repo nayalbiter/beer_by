@@ -47,6 +47,8 @@ public class MainActivity extends AppCompatActivity {
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        optionSelected = "by_city";
         mMessageEditText = findViewById(R.id.searchB);
         this.Launcher = registerForActivityResult(
                 new ActivityResultContracts.StartActivityForResult(),

@@ -5,14 +5,24 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.RadioGroup;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+//import com.example.beerby.databinding.BreweryCard;
 import com.example.beerby.databinding.BreweryCardBinding;
 
 public class BreweryCard  extends AppCompatActivity {
 
-    private BreweryCardBinding binding2;;
+    public static int chosenBrewery;
+    public void displayToast(String message) {
+        Toast.makeText(getApplicationContext(), message,
+                Toast.LENGTH_SHORT).show();
+    }
+
+    private BreweryCardBinding binding;;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,11 +30,16 @@ public class BreweryCard  extends AppCompatActivity {
 
         Intent intent = getIntent();
 
+        binding = BreweryCardBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
+        //RadioGroup rg = (RadioGroup) binding.includeContainer.radioGroup;
 
-        binding2 = BreweryCardBinding.inflate(getLayoutInflater());
-        setContentView(binding2.getRoot());
+        TextView textV  = (TextView) binding.breweryName;
+        Intent intent2 = new Intent(this, BreweryDetailsCard.class);
+        startActivity(intent2);
 
+        int a;
 
 
 

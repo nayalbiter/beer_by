@@ -9,7 +9,7 @@
     android:layout_height="match_parent"
     android:padding="20dp"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".MainActivity"
+
     tools:showIn="@layout/activity_main">
 
 
@@ -60,6 +60,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
             android:layout_marginTop="12dp"
+            android:checked="true"
             android:onClick="onRadioButtonClicked"
             android:text="@string/city"
             android:textColor="#004D40"

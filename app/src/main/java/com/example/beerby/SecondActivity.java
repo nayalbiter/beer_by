@@ -5,8 +5,12 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -80,6 +84,11 @@ public class SecondActivity extends AppCompatActivity {
         });
     }
 
+    public void displayToast(String message) {
+        Toast.makeText(getApplicationContext(), message,
+                Toast.LENGTH_SHORT).show();
+    }
+
     /*Method to generate List of data using RecyclerView with custom adapter*/
     private void generateDataList(List<BreweryInfo> BreweryList) {
         recyclerView = findViewById(R.id.itemInfo);
@@ -90,5 +99,30 @@ public class SecondActivity extends AppCompatActivity {
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(SecondActivity.this);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
+
+        recyclerView.addOnItemTouchListener(new RecyclerView.OnItemTouchListener() {
+                                                @Override
+                                                public boolean onInterceptTouchEvent(@NonNull RecyclerView rv, @NonNull MotionEvent e) {
+                                                    return false;
+                                                }
+
+                                                @Override
+                                                public void onTouchEvent(@NonNull RecyclerView rv, @NonNull MotionEvent e) {
+                                                    View child = rv.findChildViewUnder(e.getX(), e.getY());
+                                                    if (child != null ) {
+                                                        //mListener.onLongItemClick(child, rv.getChildAdapterPosition(child));
+                                                        TextView t = (TextView) child;
+                                                        displayToast(t.getText().toString());
+
+                                                    }
+                                                }
+
+                                                @Override
+                                                public void onRequestDisallowInterceptTouchEvent(boolean disallowIntercept) {
+
+                                                }
+                                            }
+        );
+
     }
 }
