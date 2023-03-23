@@ -16,6 +16,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
@@ -25,13 +26,18 @@ import com.example.beerby.databinding.ActivityMainBinding;
 
 
 public class MainActivity extends AppCompatActivity {
-
+    public static final String EXTRA_MESSAGE =
+            "com.example.beerby.extra.MESSAGE";
+    public static final String EXTRA_MESSAGE2 =
+            "com.example.beerby.extra.MESSAGE2";
     private static final String LOG_TAG =
             MainActivity.class.getSimpleName();
 
     private ActivityMainBinding binding;
+    private EditText mMessageEditText;
 
     ActivityResultLauncher<Intent> Launcher;
+    String optionSelected;
 
 
     //*********************************************************************************************\\
@@ -41,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
+        mMessageEditText = findViewById(R.id.searchB);
         this.Launcher = registerForActivityResult(
                 new ActivityResultContracts.StartActivityForResult(),
                 new ActivityResultCallback<ActivityResult>() {
@@ -166,15 +172,18 @@ public class MainActivity extends AppCompatActivity {
         switch (pressedButton) {
             case "City":
                 displayToast(getString(R.string.cityB));
+                optionSelected = "by_city";
                 break;
             case "State":
                 displayToast(getString(R.string.stateB));
+                optionSelected = "by_state";
                 break;
             case "Zip Code":
                 displayToast(getString(R.string.zipCodeB));
+                optionSelected = "by_postal";
                 break;
             default:
-                // Do nothing.
+                optionSelected = "by_city";
                 break;
         }
     }
@@ -189,7 +198,10 @@ public class MainActivity extends AppCompatActivity {
         Log.d(LOG_TAG, "Button clicked!");
 
         Intent intent2 = new Intent(this, SecondActivity.class);
-
+        String textContent = mMessageEditText.getText().toString();
+        textContent = textContent.replace(' ','_').toLowerCase();
+        intent2.putExtra(EXTRA_MESSAGE, textContent);
+        intent2.putExtra(EXTRA_MESSAGE2, optionSelected);
         startActivity(intent2);
 
     }

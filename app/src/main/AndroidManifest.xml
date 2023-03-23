@@ -37,6 +37,22 @@
                 android:value="com.example.beerby.SecondActivity" />
         </activity>
 
+        <activity android:name=".BreweryCard"
+            android:label = "Brewery List"
+            android:parentActivityName=".SecondActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.beerby.BreweryCard" />
+        </activity>
+
+        <activity android:name=".BreweryDetailsCard"
+            android:label = "Brewery List"
+            android:parentActivityName=".BreweryCard">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.beerby.BreweryDetailsCard" />
+        </activity>
+
     </application>
 
 </manifest>

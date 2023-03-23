@@ -2,6 +2,7 @@
 package com.example.beerby;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
@@ -34,6 +35,11 @@ public class SecondActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        Intent intent = getIntent();
+        String textBoxValue = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
+        String option_selected = intent.getStringExtra(MainActivity.EXTRA_MESSAGE2);
+
+
         binding2 = ListResultsBinding.inflate(getLayoutInflater());
         setContentView(binding2.getRoot());
 
@@ -44,7 +50,20 @@ public class SecondActivity extends AppCompatActivity {
 
         /*Create handle for the RetrofitInstance interface*/
         GetDataService service = RetrofitClientInstance.getRetrofitInstance().create(GetDataService.class);
-        Call<List<BreweryInfo>> call = service.getAllBreweries();
+        Call<List<BreweryInfo>> call = null;
+
+        switch (option_selected){
+            case "by_city":
+                call = service.getAllBreweriesByCity(textBoxValue);
+                break;
+            case "by_state":
+                call = service.getAllBreweriesByState(textBoxValue);
+                break;
+            case "by_postal":
+                call = service.getAllBreweriesByZip(textBoxValue);
+                break;
+        }
+
         call.enqueue(new Callback<List<BreweryInfo>>() {
             @Override
             public void onResponse(Call<List<BreweryInfo>> call, Response<List<BreweryInfo>> response) {

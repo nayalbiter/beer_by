@@ -3,27 +3,26 @@
 package com.example.beerby;
 
 import java.util.List;
+import java.util.Map;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
+import retrofit2.http.Query;
+import retrofit2.http.QueryMap;
 
 //The endpoints are defined inside of an interface using special retrofit annotations to encode details about the parameters and request method.
 public interface GetDataService {
 
     @GET("/breweries")
-    Call<List<BreweryInfo>> getAllBreweries();
+    Call<List<BreweryInfo>> getAllBreweriesByCity(@Query("by_city") String cityName);
 
-    @GET("/per_page=3")
-    Call<List<BreweryInfo>> getPerPage();
+    @GET("/breweries")
+    Call<List<BreweryInfo>> getAllBreweriesByState(@Query("by_state") String stateName);
 
-    @GET("/by_city")
-    Call<List<BreweryInfo>> getByCity();
+    @GET("/breweries")
+    Call<List<BreweryInfo>> getAllBreweriesByZip(@Query("by_postal") String zipCode);
 
-    @GET("/by_state")
-    Call<List<BreweryInfo>> getByState();
 
-    @GET("/by_postal")
-    Call<List<BreweryInfo>> getByZipCode();
 
 
 }
