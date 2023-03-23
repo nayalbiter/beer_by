@@ -181,21 +181,18 @@ public class MainActivity extends AppCompatActivity {
 
 
     //*********************************************************************************************\\
-    //ToDo
-    //this method creates an intent that opens a second Activity that shows the recycler view list of the http request
 
+    //this method creates an intent that opens a second Activity that shows the recycler view list of the http request
 
     public void showAListOfResults(View view) {
 
         Log.d(LOG_TAG, "Button clicked!");
 
         Intent intent2 = new Intent(this, SecondActivity.class);
-        //Launcher.launch(intent2);
 
         startActivity(intent2);
 
     }
-
 
 
 }

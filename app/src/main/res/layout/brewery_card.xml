@@ -4,106 +4,107 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".BreweryCard">
+    android:layout_height="wrap_content"
+    tools:context=".BreweryCard"
+    android:background="#FFEB3B">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
+    <TextView
+        android:id="@+id/listInfo"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:background="#4CAF50"
-        app:layout_anchor="@+id/appBarLayout"
-        app:layout_anchorGravity="center"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="@string/listInfo"
+        android:textAlignment="center"
+        android:textColor="#152011"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/breweryCard"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:popupTheme="@style/Theme.BeerBy">
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    </androidx.appcompat.widget.Toolbar>
-
-
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/appBarLayout"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/breweryCard"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="8dp"
-        android:background="#FFEB3B"
-        android:theme="@style/Theme.BeerBy"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        app:cardBackgroundColor="#F44336"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/breweryCard"
+        <LinearLayout
+            android:id="@+id/showingCardInfo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardBackgroundColor="#CDDC39" >
-
-            <RelativeLayout
-                android:id="@+id/showingCardInfo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+            android:orientation="vertical">
 
 
-                <ImageView
-                    android:id="@+id/beerLog"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:contentDescription="@string/beer_log"
-                    app:srcCompat="@drawable/beer2" />
+            <ImageView
+                android:id="@+id/beerLog"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:contentDescription="@string/beer_log"
+                android:padding="20dp"
+                app:srcCompat="@drawable/beer2" />
 
-                <TextView
-                    android:id="@+id/breweryName"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toEndOf="@+id/beerLog"
-                    android:onClick="breweryDetailedInfo"
-                    android:padding="15dp"
-                    android:text="@string/brewery_name"
-                    android:textColor="#130C0A"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
+            <TextView
+                android:id="@+id/breweryName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:onClick="breweryDetailedInfo"
+                android:padding="15dp"
+                android:text="@string/brewery_name"
+                android:textColor="#130C0A"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/breweryLocation"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toEndOf="@+id/breweryName"
-                    android:padding="15dp"
-                    android:text="@string/brewery_loc"
-                    android:textColor="#120C0B"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
+            <TextView
+                android:id="@+id/breweryLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:padding="15dp"
+                android:text="@string/brewery_loc"
+                android:textColor="#120C0B"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/breweryMap"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toEndOf="@+id/breweryLocation"
-                    android:padding="15dp"
-                    android:text="@string/brewery_map"
-                    android:textColor="#6D4C41"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
-
-
-                <ImageView
-                    android:id="@+id/map"
-                    android:layout_width="48dp"
-                    android:layout_height="wrap_content"
-                    android:layout_toEndOf="@+id/breweryMap"
-                    android:background="#96004E"
-                    android:contentDescription="@string/open_map"
-                    android:minHeight="48dp"
-                    android:onClick="openLocationInMap"
-                    app:srcCompat="@drawable/ic_action_map" />
+            <TextView
+                android:id="@+id/breweryMap"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:padding="15dp"
+                android:text="@string/brewery_map"
+                android:textColor="#0C0807"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
 
-            </RelativeLayout>
+            <ImageView
+                android:id="@+id/map"
+                android:layout_width="48dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:background="#ECA089"
+                android:contentDescription="@string/open_map"
+                android:minHeight="48dp"
+                android:onClick="openLocationInMap"
+                app:srcCompat="@drawable/ic_action_map3"
+                tools:ignore="ImageContrastCheck" />
 
-        </androidx.cardview.widget.CardView>
+        </LinearLayout>
 
-    </com.google.android.material.appbar.AppBarLayout>
+    </androidx.cardview.widget.CardView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

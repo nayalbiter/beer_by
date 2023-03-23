@@ -26,7 +26,7 @@
     <string name="open_map">Open Map</string>
     <string name="beer_log">beerLog</string>
 
-    <string name="brewery_map">Click map</string>
+    <string name="brewery_map">Click the icon map to get directions!</string>
 
     <string name="brewery_type">Type:</string>
     <string name="brewery_address">Address:</string>

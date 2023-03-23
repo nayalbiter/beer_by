@@ -63,10 +63,6 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
 
         holder.breweryLocation.setText(dataList.get(position).GetStreet());
 
-        //todo
-        //check how can I get the map coordinates here
-
-
     }
 
     @Override

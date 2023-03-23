@@ -10,8 +10,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-//import com.example.beerby.databinding.;
-import com.example.beerby.databinding.ActivityMainBinding;
 import com.example.beerby.databinding.ListResultsBinding;
 
 import java.util.List;
@@ -39,7 +37,6 @@ public class SecondActivity extends AppCompatActivity {
         binding2 = ListResultsBinding.inflate(getLayoutInflater());
         setContentView(binding2.getRoot());
 
-        //setContentView(R.layout.list_results);
 
         progressDialog = new ProgressDialog(SecondActivity.this);
         progressDialog.setMessage("Loading....");
