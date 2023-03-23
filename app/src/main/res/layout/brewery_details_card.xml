@@ -16,7 +16,7 @@
         app:layout_anchorGravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:popupTheme="@style/Theme.Beer_by">
+        app:popupTheme="@style/Theme.BeerBy">
 
     </androidx.appcompat.widget.Toolbar>
 
@@ -27,7 +27,7 @@
         android:layout_height="0dp"
         android:layout_marginTop="8dp"
         android:background="#FFEB3B"
-        android:theme="@style/Theme.Beer_by"
+        android:theme="@style/Theme.BeerBy"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
@@ -132,7 +132,8 @@
             android:textColor="#000000"
             android:textSize="16sp"
             android:textStyle="bold"
-            android:onClick="comeBackToTheList"/>
+            android:onClick="comeBackToTheList"
+            android:backgroundTint="#F44336"/>
 
 
     </com.google.android.material.appbar.AppBarLayout>

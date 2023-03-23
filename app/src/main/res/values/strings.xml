@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Beer-by!</string>
+    <string name="app_name">BeerBy</string>
 
     <string name="action_home">Home</string>
     <string name="back_b">Back home!</string>
@@ -17,7 +17,7 @@
     <string name="editText_main">Enter your text here...</string>
     <string name="searchBn">Let\'s go!</string>
 
-    <string name="listInfo">*Click the brewery name to find more information about it...</string>
+    <string name="listInfo">Click the brewery name to find more information about it...</string>
 
     <string name="brewery_name">Brewery name:</string>
     <string name="brewery_loc">Location:</string>
@@ -39,5 +39,12 @@
     <string name="brewery_phone">Phone Number:</string>
     <string name="brewery_website">Website:</string>
     <string name="come_back_to_the_list">Come back to the list!</string>
+
+    <string name="home_icon">Going home</string>
+    <string name="exit_icon">Leaving the app</string>
+
+    <string name="cityB">Find by city</string>
+    <string name="stateB">Find by State</string>
+    <string name="zipCodeB">Find by Zip Code</string>
 
 </resources>

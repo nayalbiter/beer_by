@@ -11,13 +11,14 @@
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:background="#4CAF50"
+        android:layout_height="wrap_content"
+        android:background="#FFEB3B"
         app:layout_anchor="@+id/appBarLayout"
         app:layout_anchorGravity="center"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:popupTheme="@style/Theme.Beer_by">
+        app:popupTheme="@style/Theme.BeerBy">
 
     </androidx.appcompat.widget.Toolbar>
 
@@ -26,12 +27,12 @@
         android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="8dp"
         android:background="#FFEB3B"
-        android:theme="@style/Theme.Beer_by"
+        android:theme="@style/Theme.BeerBy"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
         app:layout_constraintVertical_bias="0.0">
 
         <include

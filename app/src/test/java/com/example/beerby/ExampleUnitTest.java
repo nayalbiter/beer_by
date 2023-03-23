@@ -1,4 +1,4 @@
-package com.example.beer_by;
+package com.example.beerby;
 
 import org.junit.Test;
 

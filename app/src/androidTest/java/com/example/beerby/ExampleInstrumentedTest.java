@@ -1,4 +1,4 @@
-package com.example.beer_by;
+package com.example.beerby;
 
 import android.content.Context;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("com.example.beer_by", appContext.getPackageName());
+        assertEquals("com.example.beerby", appContext.getPackageName());
     }
 }

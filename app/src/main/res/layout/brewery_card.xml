@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".BreweryCard">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -16,7 +16,7 @@
         app:layout_anchorGravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:popupTheme="@style/Theme.Beer_by">
+        app:popupTheme="@style/Theme.BeerBy">
 
     </androidx.appcompat.widget.Toolbar>
 
@@ -27,7 +27,7 @@
         android:layout_height="0dp"
         android:layout_marginTop="8dp"
         android:background="#FFEB3B"
-        android:theme="@style/Theme.Beer_by"
+        android:theme="@style/Theme.BeerBy"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
@@ -36,8 +36,8 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/breweryCard"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:cardBackgroundColor="#FFC107" >
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="#CDDC39" >
 
             <RelativeLayout
                 android:id="@+id/showingCardInfo"
@@ -96,7 +96,7 @@
                     android:contentDescription="@string/open_map"
                     android:minHeight="48dp"
                     android:onClick="openLocationInMap"
-                    app:srcCompat="@drawable/ic_map" />
+                    app:srcCompat="@drawable/ic_action_map" />
 
 
             </RelativeLayout>
