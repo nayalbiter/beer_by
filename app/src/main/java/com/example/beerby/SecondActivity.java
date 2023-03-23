@@ -25,11 +25,12 @@ import retrofit2.Response;
 
 //this class initializes an instance of the GetDataService interface, the RecyclerView, and also the adapter.
 //Finally, it calls the generateDataList() method.
-public class SecondActivity extends AppCompatActivity {
+public class SecondActivity extends AppCompatActivity implements SelectListener{
 
     private ListResultsBinding binding2;
     private CustomAdapter adapter;
     private RecyclerView recyclerView;
+    public static BreweryInfo object;
 
     List<BreweryInfo> listOfBreweries;
 
@@ -55,6 +56,7 @@ public class SecondActivity extends AppCompatActivity {
         /*Create handle for the RetrofitInstance interface*/
         GetDataService service = RetrofitClientInstance.getRetrofitInstance().create(GetDataService.class);
         Call<List<BreweryInfo>> call = null;
+        if(option_selected == null) option_selected = "by_city";
 
         switch (option_selected){
             case "by_city":
@@ -95,34 +97,19 @@ public class SecondActivity extends AppCompatActivity {
         for (BreweryInfo b: BreweryList) {
             Log.d("Data:", b.toString());
         }
-        adapter = new CustomAdapter(this, BreweryList);
+        adapter = new CustomAdapter(this, BreweryList, this);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(SecondActivity.this);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
 
-        recyclerView.addOnItemTouchListener(new RecyclerView.OnItemTouchListener() {
-                                                @Override
-                                                public boolean onInterceptTouchEvent(@NonNull RecyclerView rv, @NonNull MotionEvent e) {
-                                                    return false;
-                                                }
 
-                                                @Override
-                                                public void onTouchEvent(@NonNull RecyclerView rv, @NonNull MotionEvent e) {
-                                                    View child = rv.findChildViewUnder(e.getX(), e.getY());
-                                                    if (child != null ) {
-                                                        //mListener.onLongItemClick(child, rv.getChildAdapterPosition(child));
-                                                        TextView t = (TextView) child;
-                                                        displayToast(t.getText().toString());
+    }
 
-                                                    }
-                                                }
-
-                                                @Override
-                                                public void onRequestDisallowInterceptTouchEvent(boolean disallowIntercept) {
-
-                                                }
-                                            }
-        );
-
+    @Override
+    public void onItemClicked(BreweryInfo b) {
+        displayToast("Clicked "+b.GetId());
+        SecondActivity.object = b;
+        Intent intent2 = new Intent(this, BreweryDetailsCard.class);
+        startActivity(intent2);
     }
 }

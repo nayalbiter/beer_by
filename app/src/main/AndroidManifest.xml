@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+
     <!-- Internet Permission -->
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -14,13 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BeerBy"
         tools:targetApi="31">
-        <activity
-            android:name=".Test"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -34,6 +29,7 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
         <activity
             android:name=".SecondActivity"
             android:label="Brewery List"
@@ -42,6 +38,22 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.beerby.SecondActivity" />
+        </activity>
+
+        <activity
+            android:name=".BreweryDetailsCard"
+            android:label="Brewery List"
+            android:parentActivityName=".SecondActivity">
+
+
+        </activity>
+
+        <activity
+            android:name=".BreweryCard"
+            android:label="Brewery List"
+            android:parentActivityName=".SecondActivity">
+
+
         </activity>
 
     </application>

@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import org.w3c.dom.Text;
@@ -21,12 +22,13 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
 
     private List<BreweryInfo> dataList;
     private Context context;
+private SelectListener listener;
 
 
-
-    public CustomAdapter(Context context,List<BreweryInfo> dataList){
+    public CustomAdapter(Context context,List<BreweryInfo> dataList, SelectListener listener){
         this.context = context;
         this.dataList = dataList;
+        this.listener = listener;
     }
 
     class CustomViewHolder extends RecyclerView.ViewHolder {
@@ -36,8 +38,8 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
         ImageView logo;
         TextView breweryName;
         TextView breweryLocation;
-        TextView breweryMap;
-        ImageView map;
+
+
 
 
         CustomViewHolder(View itemView) {
@@ -47,8 +49,9 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
             logo = mView.findViewById(R.id.beerLog);
             breweryName = mView.findViewById(R.id.breweryName);
             breweryLocation = mView.findViewById(R.id.breweryLocation);
-            breweryMap = mView.findViewById(R.id.breweryMap);
-            map = mView.findViewById(R.id.map);
+
+
+
 
         }
 
@@ -64,17 +67,15 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
 
     @Override
     public void onBindViewHolder(CustomViewHolder holder, int position) {
+        holder.breweryName.setText(dataList.get(position).GetName());
+        holder.breweryLocation.setText(dataList.get(position).GetStreet());
+        int a = position;
         holder.breweryName.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(v.getContext(), "position = " + holder.getAdapterPosition(), Toast.LENGTH_SHORT).show();
-                BreweryCard.chosenBrewery = holder.getAdapterPosition();
-
+                listener.onItemClicked(dataList.get(a));
             }
         });
-        holder.breweryName.setText(dataList.get(position).GetName());
-        holder.breweryLocation.setText(dataList.get(position).GetStreet());
-
     }
 
     @Override

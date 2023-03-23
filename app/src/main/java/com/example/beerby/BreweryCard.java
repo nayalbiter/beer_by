@@ -35,20 +35,10 @@ public class BreweryCard  extends AppCompatActivity {
 
         //RadioGroup rg = (RadioGroup) binding.includeContainer.radioGroup;
 
-        TextView textV  = (TextView) binding.breweryName;
-        Intent intent2 = new Intent(this, BreweryDetailsCard.class);
-        startActivity(intent2);
-
-        int a;
-
-
-
     }
     //when clicked  on the brewery name in the list it displays the brewery card with details
     public void breweryDetailedInfo(View view) {
-        Intent intent2 = new Intent(this, BreweryDetailsCard.class);
 
-        startActivity(intent2);
 
         //creates an intent that opens the activity  Brewery_details_card.xml
     }

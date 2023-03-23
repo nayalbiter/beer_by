@@ -28,8 +28,10 @@ import com.example.beerby.databinding.ActivityMainBinding;
 public class MainActivity extends AppCompatActivity {
     public static final String EXTRA_MESSAGE =
             "com.example.beerby.extra.MESSAGE";
+
     public static final String EXTRA_MESSAGE2 =
             "com.example.beerby.extra.MESSAGE2";
+
     private static final String LOG_TAG =
             MainActivity.class.getSimpleName();
 
@@ -50,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
 
         optionSelected = "by_city";
         mMessageEditText = findViewById(R.id.searchB);
+
         this.Launcher = registerForActivityResult(
                 new ActivityResultContracts.StartActivityForResult(),
                 new ActivityResultCallback<ActivityResult>() {
@@ -154,8 +157,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     //*********************************************************************************************\\
-    //ToDO
-    //from the buttons used to define search by city, state or zip code
+    //this method defines how is going to be the search: by city, state or zip code
     public void onRadioButtonClicked(View view) {
 
         //getting the buttons from the radio group
@@ -169,8 +171,6 @@ public class MainActivity extends AppCompatActivity {
 
         String pressedButton = rb.getText().toString();
 
-        //TODo
-        // Check which radio button was clicked.
         switch (pressedButton) {
             case "City":
                 displayToast(getString(R.string.cityB));
@@ -200,10 +200,15 @@ public class MainActivity extends AppCompatActivity {
         Log.d(LOG_TAG, "Button clicked!");
 
         Intent intent2 = new Intent(this, SecondActivity.class);
+
         String textContent = mMessageEditText.getText().toString();
+
         textContent = textContent.replace(' ','_').toLowerCase();
+
         intent2.putExtra(EXTRA_MESSAGE, textContent);
+
         intent2.putExtra(EXTRA_MESSAGE2, optionSelected);
+
         startActivity(intent2);
 
     }
