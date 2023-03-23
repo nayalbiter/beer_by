@@ -5,20 +5,12 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.MotionEvent;
-import android.view.View;
-import android.widget.TextView;
 import android.widget.Toast;
-
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.beerby.databinding.ListResultsBinding;
-
 import java.util.List;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -32,7 +24,6 @@ public class SecondActivity extends AppCompatActivity implements SelectListener{
     private RecyclerView recyclerView;
     public static BreweryInfo object;
 
-    List<BreweryInfo> listOfBreweries;
 
     ProgressDialog progressDialog;
 
@@ -41,8 +32,8 @@ public class SecondActivity extends AppCompatActivity implements SelectListener{
         super.onCreate(savedInstanceState);
 
         Intent intent = getIntent();
-        String textBoxValue = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
-        String option_selected = intent.getStringExtra(MainActivity.EXTRA_MESSAGE2);
+        String textBoxValue = MainActivity.value;
+        String option_selected = MainActivity.by;
 
 
         binding2 = ListResultsBinding.inflate(getLayoutInflater());

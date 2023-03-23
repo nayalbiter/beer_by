@@ -26,11 +26,11 @@ import com.example.beerby.databinding.ActivityMainBinding;
 
 
 public class MainActivity extends AppCompatActivity {
-    public static final String EXTRA_MESSAGE =
-            "com.example.beerby.extra.MESSAGE";
 
-    public static final String EXTRA_MESSAGE2 =
-            "com.example.beerby.extra.MESSAGE2";
+
+    public static String value;
+    public static String by;
+
 
     private static final String LOG_TAG =
             MainActivity.class.getSimpleName();
@@ -51,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         optionSelected = "by_city";
+        by = "by_city";
         mMessageEditText = findViewById(R.id.searchB);
 
         this.Launcher = registerForActivityResult(
@@ -179,6 +180,7 @@ public class MainActivity extends AppCompatActivity {
             case "State":
                 displayToast(getString(R.string.stateB));
                 optionSelected = "by_state";
+
                 break;
             case "Zip Code":
                 displayToast(getString(R.string.zipCodeB));
@@ -188,6 +190,7 @@ public class MainActivity extends AppCompatActivity {
                 optionSelected = "by_city";
                 break;
         }
+        by = optionSelected;
     }
 
 
@@ -202,12 +205,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent2 = new Intent(this, SecondActivity.class);
 
         String textContent = mMessageEditText.getText().toString();
-
-        textContent = textContent.replace(' ','_').toLowerCase();
-
-        intent2.putExtra(EXTRA_MESSAGE, textContent);
-
-        intent2.putExtra(EXTRA_MESSAGE2, optionSelected);
+        value = textContent;
 
         startActivity(intent2);
 

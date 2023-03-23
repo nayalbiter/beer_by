@@ -47,4 +47,14 @@
     <string name="stateB">Find by State</string>
     <string name="zipCodeB">Find by Zip Code</string>
 
+    <string name="url">Website: </string>
+    <string name="type">Type:</string>
+    <string name="address">"Address: "</string>
+    <string name="cityToShow">"City: "</string>
+    <string name="stateToShow">"State: "</string>
+    <string name="zipCodeToShow">"Zip Code: "</string>
+    <string name="countryToShow">"Country: "</string>
+    <string name="phoneToShow">"Phone: "</string>
+
+
 </resources>

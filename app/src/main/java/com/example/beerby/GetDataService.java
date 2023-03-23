@@ -3,12 +3,10 @@
 package com.example.beerby;
 
 import java.util.List;
-import java.util.Map;
-
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
-import retrofit2.http.QueryMap;
+
 
 //The endpoints are defined inside of an interface using special retrofit annotations to encode details about the parameters and request method.
 public interface GetDataService {

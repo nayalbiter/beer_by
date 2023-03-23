@@ -2,18 +2,13 @@
 package com.example.beerby;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.w3c.dom.Text;
 
 import java.util.List;
 
@@ -22,7 +17,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
 
     private List<BreweryInfo> dataList;
     private Context context;
-private SelectListener listener;
+    private SelectListener listener;
 
 
     public CustomAdapter(Context context,List<BreweryInfo> dataList, SelectListener listener){
@@ -34,12 +29,9 @@ private SelectListener listener;
     class CustomViewHolder extends RecyclerView.ViewHolder {
 
         public final View mView;
-
         ImageView logo;
         TextView breweryName;
         TextView breweryLocation;
-
-
 
 
         CustomViewHolder(View itemView) {
@@ -49,8 +41,6 @@ private SelectListener listener;
             logo = mView.findViewById(R.id.beerLog);
             breweryName = mView.findViewById(R.id.breweryName);
             breweryLocation = mView.findViewById(R.id.breweryLocation);
-
-
 
 
         }

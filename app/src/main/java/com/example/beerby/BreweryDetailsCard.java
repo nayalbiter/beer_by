@@ -2,9 +2,8 @@
 package com.example.beerby;
 
 import android.os.Bundle;
-import android.view.View;
-import android.widget.TextView;
 
+import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.beerby.databinding.BreweryDetailsCardBinding;
@@ -29,21 +28,22 @@ public class BreweryDetailsCard extends AppCompatActivity {
         TextView country = (TextView) binding.breweryCountry;
         TextView phone = (TextView) binding.breweryPhone;
 
-        website.setText("Website: "+SecondActivity.object.GetURL());
+        website.setText(getString(R.string.url)+SecondActivity.object.GetURL());
 
-        type.setText("Type: "+SecondActivity.object.GetType());
+        type.setText(getString(R.string.type)+SecondActivity.object.GetType());
 
-        address.setText("Address: "+SecondActivity.object.GetStreet());
+        address.setText(getString(R.string.address)+SecondActivity.object.GetStreet());
 
-        city.setText("City: "+SecondActivity.object.GetCity());
+        city.setText(getString(R.string.cityToShow)+SecondActivity.object.GetCity());
 
-        state.setText("State: "+SecondActivity.object.GetState());
+        state.setText(getString(R.string.stateToShow)+SecondActivity.object.GetState());
 
-        zipCode.setText("Zip Code: "+SecondActivity.object.GetZipCode());
+        zipCode.setText(getString(R.string.zipCodeToShow)+SecondActivity.object.GetZipCode());
 
-        country.setText("Country: "+SecondActivity.object.GetCountry());
+        country.setText(getString(R.string.countryToShow)+SecondActivity.object.GetCountry());
 
-        phone.setText("Phone: "+SecondActivity.object.GetPhone());
+        phone.setText(getString(R.string.phoneToShow)+SecondActivity.object.GetPhone());
+
 
     }
 
